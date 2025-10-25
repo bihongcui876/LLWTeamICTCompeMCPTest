@@ -217,7 +217,7 @@ Content-Type: application/json
     "糖尿病": ["眼底检查", "神经传导速度"],
     "高血压": ["心脏超声", "肾功能检测"]
 }
-
+---
 9. 获取实体具体关系详细信息API
 应用地址：
 http://cpubmed.openi.org.cn/graph/triple-sp
@@ -267,6 +267,7 @@ source	Object	来源信息	包含文献详细信息的对象
                           }
                         ]
                       }
+---
 10. 获取相近的实体词API
 应用地址：
 http://cpubmed.openi.org.cn/graph/similar-entity
