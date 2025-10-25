@@ -76,6 +76,21 @@ params: query(text),sign(text)
 
 return keys: cut_result(array)
 
+
+
+---
+
+4.三元组匹配：
+URL:http://cpubmed.openi.org.cn/graph/match
+
+params: query(text),sign(text)
+
+return keys:match_result(array)
+
+三元组格式：[ID,头实体,关系,尾实体]
+
+（意义；头实体与尾实体有关联，ID是三元组的ID）
+
 示例：
 接口调用
       
@@ -90,18 +105,6 @@ return keys: cut_result(array)
         ["是", "停用词"],
         ...
     ]
-
----
-
-4.三元组匹配：
-URL:http://cpubmed.openi.org.cn/graph/match
-
-params: query(text),sign(text)
-
-return keys:match_result(array)
-
-三元组格式：[ID,头实体,关系,尾实体]
-（意义；头实体与尾实体有关联，ID是三元组的ID）
 
 ---
 
@@ -214,6 +217,80 @@ Content-Type: application/json
     "糖尿病": ["眼底检查", "神经传导速度"],
     "高血压": ["心脏超声", "肾功能检测"]
 }
+
+9. 获取实体具体关系详细信息API
+应用地址：
+http://cpubmed.openi.org.cn/graph/triple-sp
+接口调用参数
+调用API需要向接口发送以下字段来访问服务。
+
+字段名	类型	含义	必填	备注
+header	text	头实体名称	True	支持模糊匹配最接近实体
+relation	text	关系类型	True	实体间的特定关系
+sign	text	密钥	True	每个账号一个独有的密钥
+返回结果
+字段名	类型	含义	备注
+header	text	头实体名称	查询的实体名称
+relation	text	关系类型	查询的关系类型
+triples	Array	三元组详细信息	包含尾实体和来源信息的数组
+end_entity	text	尾实体名称	三元组中的尾实体
+triple_id	text	三元组ID	唯一标识符
+source	Object	来源信息	包含文献详细信息的对象
+返回示例
+{
+                        "header": "库欣病",
+                        "relation": "病理分型",
+                        "triples": [
+                          {
+                            "end_entity": "微腺瘤",
+                            "source": {
+                              "triple_id": "3602323",
+                              "doc_id": "2735201",
+                              "text": "方法回顾性分析本院1985年～1996年76例库欣病患者,其中包括大腺瘤患者12例和微腺瘤患者64例."
+                            }
+                          },
+                          {
+                            "end_entity": "大腺瘤",
+                            "source": {
+                              "triple_id": "3602324",
+                              "doc_id": "2735201",
+                              "text": "方法回顾性分析本院1985年～1996年76例库欣病患者,其中包括大腺瘤患者12例和微腺瘤患者64例."
+                            }
+                          },
+                          {
+                            "end_entity": "未缓解组",
+                            "source": {
+                              "triple_id": "10649957",
+                              "doc_id": "41631167",
+                              "text": "根据术后血皮质醇水平将208例库欣病患者分为内分泌早期缓解组(简称早期缓解组,143例)和未缓解组(65例)."
+                            }
+                          }
+                        ]
+                      }
+10. 获取相近的实体词API
+应用地址：
+http://cpubmed.openi.org.cn/graph/similar-entity
+接口调用参数
+调用API需要向接口发送以下字段来访问服务。
+
+字段名	类型	含义	必填	备注
+entity	text	实体词	True	获取与该实体接近的实体词列表
+sign	text	密钥	True	每个账号一个独有的密钥
+返回结果
+字段名	类型	含义	备注
+entities	array	实体列表	[实体1，实体2，...]
+示例
+    接口调用
+      
+      http://cpubmed.openi.org.cn/graph/similar-entity?
+      entity=心脏病
+      &sign=b915f3a2cdde890c7e9eea9719edd366225a29b11d9ceb2a4407a5ca453ebe6d      
+    返回结果
+        [ "心脏病", "无心脏病", "心脏疾病", "肺心脏病", "心脏病变" ]
+---
+
+## 实际操作备注
+1. 使用HTTPS方法访问，但是放弃审查，同时放弃使用通用UserAgent
 
 ---
 
