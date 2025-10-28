@@ -82,9 +82,14 @@ def cnlunar_date() -> str:
     }
     return str(dic)
 
+
+
+
+
 if __name__ == "__main__":
     #host
-    mcp.settings.host="localhost"
-    mcp.run(transport="sse")
+    #mcp.settings.host="127.0.0.1"
+    #mcp.settings.port=8000
+    #mcp.run(transport="sse")
+    mcp.run(transport="stdio") #运行状态
     logger.info("启动时间测试项 Start time serverDemo through MCP") # 记录服务启动日志
-    #mcp.run(transport="stdio") #运行状态
