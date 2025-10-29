@@ -548,3 +548,4 @@ git config --global --unset https.proxy
 git push -u origin main
 ```
 - 调试完整以后可以直接使用该命令
+- 另外：如果链接不成功请使用加速器或者别的东西辅助加速（如Steam++）
