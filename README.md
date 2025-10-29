@@ -547,3 +547,4 @@ git config --global --unset https.proxy
 ```bash
 git push -u origin main
 ```
+- 调试完整以后可以直接使用该命令
