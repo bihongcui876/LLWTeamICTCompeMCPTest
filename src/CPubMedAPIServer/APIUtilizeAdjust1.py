@@ -7,7 +7,8 @@ from urllib3.exceptions import InsecureRequestWarning
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-#基本URL
+#基本URL 注意使用了HTTPS协议而不是上面的HTTP协议
+#注意：本API组可能需要弃用众多内容
 baseurl="https://cpubmed.openi.org.cn/graph/"
 #用户端UA
 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.1000.0 Safari/537.36"
