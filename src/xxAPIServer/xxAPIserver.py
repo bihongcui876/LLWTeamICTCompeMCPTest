@@ -34,7 +34,7 @@ def searchfor(query:str):
     return data
 
 # detail
-@mcp.tool(name="ill_search_detail",description="输入病症，反馈十分详细的有关信息")
+@mcp.tool(name="medic_search_detail",description="输入病症，反馈十分详细的有关信息")
 def search_detail(query:str):
     """
     获取病症详情信息。
@@ -50,7 +50,7 @@ def search_detail(query:str):
         return {"result":"not found"}
 
 # normal(simple)
-@mcp.tool(name="ill_search",description="输入病症，获得有关信息")
+@mcp.tool(name="medic_search",description="输入病症，获得有关信息")
 def search_normal(query:str):
     """
     获取病症常规信息。
@@ -83,7 +83,7 @@ def search_normal(query:str):
         return "not found"
 
 # simple(less)
-@mcp.tool(name="ill_search_simple",description="输入病症，获得精练信息")
+@mcp.tool(name="medic_search_simple",description="输入病症，获得精练信息")
 def search_simple(query:str):
     """
     获取病症精练信息。
@@ -113,7 +113,7 @@ def search_simple(query:str):
         return "not found"
 
 # description
-@mcp.tool(name="ill_search_description",description="输入病症，获得描述信息")
+@mcp.tool(name="medic_search_description",description="输入病症，获得描述信息")
 def search_desc(query:str):
     """
     获取病症常规信息。
@@ -141,7 +141,7 @@ def search_desc(query:str):
         return "not found"
 
 # medicine
-@mcp.tool(name="ill_search_detail_medicine",description="输入病症，获得全部有关药物")
+@mcp.tool(name="medic_search_detail_medicine",description="输入病症，获得全部有关药物")
 def search_medicine(query:str):
     """
     获取病症常规信息。
@@ -165,7 +165,7 @@ def search_medicine(query:str):
         return "not found"
 
 # list
-@mcp.tool(name="ill_search_list",description="输入病症，获得全部名称与分类列表")
+@mcp.tool(name="medic_search_list",description="输入病症，获得全部名称与分类列表")
 def search_simple(query:str):
     """
     获取病症常规信息。
