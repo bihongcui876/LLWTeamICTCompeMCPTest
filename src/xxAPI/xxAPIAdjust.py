@@ -1,4 +1,5 @@
 import requests
+import time
 
 url = "https://v2.xxapi.cn/api/disease"
 a=input("询问什么信息：")

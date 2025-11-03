@@ -24,11 +24,11 @@ while(True):
     1     关联三元组查询
     2     关联三元组关系
     3     医学辅助分词
-    4     关系对匹配
-    5     医学文献查找
-    6     关联性路径匹配
-    7     相似度指数
-    8     （不推荐）病症推荐检查项目
+    4     关系对匹配(fail)
+    5     医学文献查找(fail)
+    6     关联性路径匹配(fail)
+    7     相似度指数(fail)
+    8     （不推荐）病症推荐检查项目(fail)
     9     实体详细关系
     10    相近与相关名词
     """)
@@ -95,61 +95,7 @@ while(True):
         response = requests.get(url=url, params=params, headers=headers, allow_redirects=False, verify=False)
         # 调试点
         print(response.text)
-    elif(command=="4"):
-        print("--执行句段关系匹配--")
-        query = input("输入一句话：")
-        # 测试数据：
-        # 肝癌的发生是多因素作用的结果,其中乙型、丙型肝炎病毒和黄曲霉毒素B1是发生肝癌的主要危险因素.
-        params = {"query": query, "sign": api_key}
-        url = baseurl + "match"
-        response = requests.get(url=url, params=params, headers=headers, allow_redirects=False, verify=False)
-        # 调试点
-        print(response.text)
-    elif(command=="5"):
-        print("--执行医学文献查询--")
-        query = input("输入有关名词：")
-        # 测试数据：肝癌
-        params = {"query": query, "sign": api_key}
-        url = baseurl + "retrieve"
-        response = requests.get(url=url, params=params, headers=headers, allow_redirects=False, verify=False)
-        # 调试点
-        print(response.text)
-    elif(command=="6"):
-        print("--执行关系路径查询--")
-        query1,query2 = input("输入两个名词（空格隔开）：").strip().split()
-        # 测试数据：高血压 糖尿病；心脏病 糖尿病
-        params = {"source-entity": query1,"target-entity":query2, "sign": api_key}
-        url = baseurl + "path"
-        response = requests.get(url=url, params=params, headers=headers, allow_redirects=False, verify=False)
-        # 调试点
-        print(response.text)
-    elif(command=="7"):
-        print("--比较相似度指数--")
-        query1,query2 = input("输入两个名词（用空格分隔）：").strip().split()
-        # 测试数据：肝癌
-        params = {"ent1": query1,"ent2":query2, "sign": api_key}
-        url = baseurl + "similarity"
-        response = requests.get(url=url, params=params, headers=headers, allow_redirects=False, verify=False)
-        # 调试点
-        print(response.text)
-    #会报错
-    elif(command=="8"):
-        url="http://120.24.161.253:8586/graph/auxiliary-tests"
-        print("--获得辅助检查项目--")
-        disease=input("输入一个或多个疾病名称：").strip().split()
-        diseases=json.dumps(disease)
-        # 测试数据：腰椎间盘突出
-        params = {"diseases":diseases, "sign": api_key}
-        payload = {
-            "req": {
-                "param": params
-            }
-        }
-        #POST请求头
-        headers2 = {"User-agent": user_agent,"Content-Type":"application/json"}
-        response = requests.post(url=url, json=params, headers=headers2, allow_redirects=False, verify=False)
-        # 调试点
-        print(response.text)
+
     elif(command=="9"):
         print("--有关名词的特别关系--")
         query1, query2 = input("输入名词与关系（空格隔开）：").strip().split()
