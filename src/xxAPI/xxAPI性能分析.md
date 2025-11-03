@@ -54,10 +54,10 @@ print(f"time consumption : %.8f"%(tb-ta))
 
 - 字段减省建议
   - **detail**：以上所有字段导入
-  - **simple**：上述中`acompany, category, cause, check, cure_department, cure_lasttime, cure_prob, desc, get_way, name, recommend_drug, prevent, yibao_status`
-  - **less**：上述中`category, cause, check, cure_department, desc, get_way, name, recommend_drug, prevent, yibao_status`
+  - **simple**：上述中`acompany, category, cause, check, cure_department, cure_lasttime, cured_prob, desc, get_way, name, recommand_drug, prevent, yibao_status`
+  - **less**：上述中`category, cause, check, cure_department, desc, get_way, name, recommand_drug, prevent, yibao_status`
   - **desc_only**：上述中`category, cause, check, desc, get_way, name, prevent, recommend_drug`
-  - **all_drugs**：上述中`check, drug_detail`
+  - **all_drugs**：上述中`name,category,check, drug_detail,yibao_status`
 
 ## 启动API
 ```bash
