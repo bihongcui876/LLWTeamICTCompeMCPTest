@@ -83,22 +83,21 @@ while(flag):
                     d["recommand_drug"]=i["recommand_drug"]
                     output.append(d)
                 print(json.dumps(output,ensure_ascii=False))
-            elif cmd=="4":
+            elif cmd=="4": # medicine
                 for i in data:
                     d={}
                     d["name"]=i["name"]
                     d["category"]=i["category"]
                     d["check"]=i["check"]
-                    d["drug_detail"]=i["detail"]
+                    d["drug_detail"]=i["drug_detail"]
                     d["yibao_status"]=i["yibao_status"]
                     output.append(d)
                 print(json.dumps(output,ensure_ascii=False))
-            elif cmd=="5":
+            elif cmd=="5": # traverse
                 for i in data:
                     d={}
                     d["name"]=i["name"]
                     d["category"]=i["category"]
-                    d["yibao_status"]=i["yibao_status"]
                     output.append(d)
                 print(json.dumps(output,ensure_ascii=False))
             else:
