@@ -139,3 +139,16 @@ npx @modelcontextprotocol/inspector uvx mcp-serverDemo-fetch
 ## 本地MCP Server源代码文件（挂后台一直用就行，可能不需要uv）
 
 ### xxAPIServer与其工具
+
+见文件夹[![xxAPI](https://img.shields.io/badge/小小API-xxAPI-black)](./src/xxAPIServer)
+
+即见文件夹src/xxAPIServer
+
+1. 推荐运行本帖笔主已经调试完毕的xxAPIServer.py，可以在本机配置完毕有关库后启动。
+2. 注意：请一定要改动主代码中uvicorn（本人放在代码后段）中的端口信息以适配运行端（host和post）！
+```python
+if __name__ == "__main__":
+    uvicorn(......);
+```
+
+3. 有关库列表：
