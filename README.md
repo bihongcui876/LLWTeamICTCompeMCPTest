@@ -40,12 +40,17 @@
 - 结合自身知识回答
 
 2. 此外，对病理问答的追问追答设计为：
-- - 病理持续分析
-- - 表征里征对应病理修订（比如系统性红斑狼疮怀疑，但是追问说明喉部表征为白色粒泡，诊断为水痘症；或里征为非典型里征，但仍然判定为该病症之类）
+- 病理持续分析
+- 表征里征对应病理修订（比如系统性红斑狼疮怀疑，但是追问说明喉部表征为白色粒泡，诊断为水痘症；或里征为非典型里征，但仍然判定为该病症之类）
 
 3. 模糊性问答的功能设计为：
 - 模糊性猜测型引导式回答（避免导致致命错误）
 - 模糊性表层式基础性回答（基于数据作出分析）
+
+4. 病症中有关和检查报告单、诊断方的辅助审核或辅助诊断
+- 依据现有数据作普遍性
+- 依据开方信息作辅助信息检测
+- 依据病历对开方合理性分析
 
 ### “病理描述”说明（旧版沿用）（*福建医科大学* 24级临床医学系 *范书颜*——证明此AI总结内容有效）
 1. 病因：明确疾病的“源头”，即疾病由什么引起，如细菌感染、基因突变、长期吸烟、外伤等。
@@ -76,3 +81,61 @@
   |
   +--- 模型问答数据库训练
 ```
+---
+## 貳、环境测试
+
+### 部分前置需求
+
+* uv（不一定）
+* Python（必须）
+
+
+### Inspector安装与运行
+1. 安装Inspector
+```bash
+npx @modelcontextprotocal/inspector
+```
+
+2. 安装依赖（对于uv项目）
+
+```bash
+uv init "mcp[cli]"
+```
+
+3. 如果下载时候需要传递参数，则需要通过以下下载
+
+```bash
+# 传递参数 arg1 arg2
+npx @modelcontextprotocol/inspector build/index.js arg1 arg2
+
+# 传递环境变量 KEY=value  KEY2=$VALUE2
+npx @modelcontextprotocol/inspector -e KEY=value -e KEY2=$VALUE2 node build/index.js
+
+# 同时传递环境变量和参数
+npx @modelcontextprotocol/inspector -e KEY=value -e KEY2=$VALUE2 node build/index.js arg1 arg2
+
+# Use -- to separate inspector flags from serverDemo arguments
+npx @modelcontextprotocol/inspector -e KEY=$VALUE -- node build/index.js -e serverDemo-flag
+```
+
+4. 调试
+
+```bash
+npx @modelcontextprotocol/inspector uvx mcp-serverDemo-fetch
+```
+
+5. 注意：Nexent只支持SSE方式，并且（tmd）示例为本机端口地址，但实际只能连接从公网或域名的端口。
+
+### 模拟性测试
+
+本人认为，相比Nexent，Cherry Studio的特色更加友好，但部分功能也具有局限性。
+
+### Nexent本地化部署
+请通过 https://github.com/ModelEngine-Group/nexent 网址对Nexent的GitHub仓库进行研究（当然恕我直言，好多地方烂的不行）
+
+一般建议通过docker进行部署
+
+---
+## 本地MCP Server源代码文件（挂后台一直用就行，可能不需要uv）
+
+### xxAPIServer与其工具
