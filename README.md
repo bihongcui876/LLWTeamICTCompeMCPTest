@@ -9,7 +9,7 @@
 [![配置文档](https://img.shields.io/badge/配置文档-models%20jsons-black)](./NexentModelsJsons)
 [![配置文档](https://img.shields.io/badge/前端访问与端口-ports-yellow)](./端口分法与网站地址.md)
 [![配置文档](https://img.shields.io/badge/演示效果1-photos%20and%20vedios%201-purple)](./有关图像与视频)
-[![配置文档](https://img.shields.io/badge/演示效果2-photos%20and%20vedios%201-purple)](./效果图像)
+[![配置文档](https://img.shields.io/badge/演示效果2-photos%20and%20vedios%202-purple)](./效果图像)
 
 ---
 ## 零、主要操作信息
