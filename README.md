@@ -153,6 +153,22 @@ if __name__ == "__main__":
 ```
 
 3. 有关库列表：
+- fastmcp
+- uvicorn
+- mcp
+- requests
+- starlette
+
+（其他，可以改进代码为非同步代码而是异步代码，当然这是基于大型代码的情况）
+- asyncio
+- urllib3
+- httpx
+- ...
+直接安装代码（本地git拉取在IDE上面对MD文件操作）
+```bash
+pip install fastmcp uvicorn mcp requests starlette
+```
+推荐运行xxAPIServer（记得改端口）
 
 ## 需要的外包服务端口
 
