@@ -7,6 +7,7 @@
 [![xxAPI](https://img.shields.io/badge/小小API-xxAPI-black)](./src/xxAPIServer)
 [![CPubMedAPI](https://img.shields.io/badge/PubMed-CPubMedAPI-black)](./src/CPubMedAPIServer)
 [![配置文档](https://img.shields.io/badge/配置文档-models%20jsons-black)](./NexentModelsJsons)
+[![配置文档](https://img.shields.io/badge/前端访问与端口-portss%20jsons-yellow)](./端口分法与网站地址.md)
 
 ---
 ## 零、主要操作信息
@@ -152,3 +153,48 @@ if __name__ == "__main__":
 ```
 
 3. 有关库列表：
+
+## 需要的外包服务端口
+
+- 目前使用（2025年11月12日配）
+  - 本文档之中，localhost:9090对应的网址是：（http或https）
+https://58859ed.r38.cpolar.top
+  - 因端口侵占问题，已然调整端口到localhost:3090，对应的网址是：
+https://22757832.r38.cpolar.top
+
+- 使用（2025年11月8日配）
+  - 本文档之中，localhost:9090对应的网址是：（http或https）
+https://2081f93c.r38.cpolar.top
+  - 因端口侵占问题，已然调整端口到localhost:3090，对应的网址是：
+https://3b58623f.r38.cpolar.top
+
+- 使用（2025年11月7日配）
+  - 本文档之中，localhost:9090对应的网址是：（http或https）
+https://2081f93c.r38.cpolar.top
+  - localhost:3000对应的网址是：
+https://22d22915.r38.cpolar.top
+
+---
+## 知识库
+
+知识库系在此文件之外另一个文档中存储。
+
+其中参考的网页属于以下域名：
+
+| 网址                          | 署    |
+|-----------------------------|------|
+| https://www.nhc.gov.cn/wjw/ | 卫健委  |
+| ---                         | ---  |
+| https://www.yixue.com/      | 医学百科 |
+| ---                         | ---  |
+
+此外这些知识库导入Nexent，使用开放大模型（智谱GLM）中的嵌入模型辅助做检索知识库（Embedding-3），以便实现有关功能。
+（报销发票有关价格：人民币柒圓伍角，效果为：5000,0000 token，有效期2025年11月12日开始到2025年2月12日）
+
+---
+## 项目其他计划
+
+使用类似思想真正服务人民，做到一个真正有效的项目闭环。
+
+---
+合作：(暂时不写)
